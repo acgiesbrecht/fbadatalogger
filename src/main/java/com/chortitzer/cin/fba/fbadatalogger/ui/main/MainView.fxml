@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/8.0.121"
+            fx:controller="com.chortitzer.cin.fba.fbadatalogger.ui.main.MainView">
+    <top>
+        <fx:include source="../menu/MenuView.fxml"/>
+    </top>
+    <center>
+        <AnchorPane>
+            <TableView fx:id="itemsTable" AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10"
+                       AnchorPane.leftAnchor="10" AnchorPane.bottomAnchor="10">
+                <columns>
+                    <TableColumn text="Fecha/Hora" prefWidth="150">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="fechahora"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Archivo" prefWidth="250">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="archivo"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Evento" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="evento"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Contenido" prefWidth="500">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="contenido"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </AnchorPane>
+    </center>
+    <bottom>
+        <ProgressBar progress="-1" prefWidth="1000"/>
+    </bottom>
+</BorderPane>
